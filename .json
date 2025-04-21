@@ -1,0 +1,17 @@
+{
+  "project_name": "Ecumaster EMU Display",
+  "project_id": "2102",
+  "version": "1.0.0",
+  "description": "Raspberry Pi basiertes Display-System für Ecumaster EMU Black mit CAN-Bus-Kommunikation",
+  "variants": [
+    {"id": "2102-2.8", "display_size": 2.8, "resolution": "320x240", "interface": "GPIO", "touchscreen": "resistive"},
+    {"id": "2102-3.5", "display_size": 3.5, "resolution": "480x320", "interface": "GPIO", "touchscreen": "resistive"},
+    {"id": "2102-5.0", "display_size": 5.0, "resolution": "800x480", "interface": "HDMI", "touchscreen": "resistive"},
+    {"id": "2102-7.0", "display_size": 7.0, "resolution": "800x480", "interface": "HDMI", "touchscreen": "capacitive"}
+  ],
+  "base_configuration": {
+    "operating_system": "Raspberry Pi OS Bullseye",
+    "required_packages": ["python3-tk", "python3-pip", "xinput-calibrator", "xscreensaver"],
+    "python_dependencies": ["python-can", "tkinter", "RPi.GPIO"]
+  }
+}
