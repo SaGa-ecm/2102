@@ -1,0 +1,58 @@
+{
+  "display_configurations": {
+    "2.8": {
+      "config_txt": [
+        "dtoverlay=waveshare28a",
+        "hdmi_force_hotplug=1",
+        "hdmi_group=2",
+        "hdmi_mode=87",
+        "hdmi_cvt=320 240 60 6 0 0 0"
+      ],
+      "calibration": {
+        "method": "xinput_calibrator",
+        "config_file": "/etc/X11/xorg.conf.d/99-calibration.conf",
+        "template": "Section \"InputClass\"\n    Identifier \"calibration\"\n    MatchProduct \"ADS7846 Touchscreen\"\n    Option \"Calibration\" \"XMIN YMIN XMAX YMAX\"\n    Option \"SwapAxes\" \"SWAP\"\nEndSection"
+      }
+    },
+    "3.5": {
+      "config_txt": [
+        "dtoverlay=waveshare35a",
+        "hdmi_force_hotplug=1",
+        "hdmi_group=2",
+        "hdmi_mode=87",
+        "hdmi_cvt=480 320 60 6 0 0 0"
+      ],
+      "calibration": {
+        "method": "xinput_calibrator",
+        "config_file": "/etc/X11/xorg.conf.d/99-calibration.conf",
+        "template": "Section \"InputClass\"\n    Identifier \"calibration\"\n    MatchProduct \"ADS7846 Touchscreen\"\n    Option \"Calibration\" \"XMIN YMIN XMAX YMAX\"\n    Option \"SwapAxes\" \"SWAP\"\nEndSection"
+      }
+    },
+    "5.0": {
+      "config_txt": [
+        "hdmi_force_hotplug=1",
+        "hdmi_group=2",
+        "hdmi_mode=87",
+        "hdmi_cvt=800 480 60 6 0 0 0"
+      ],
+      "calibration": {
+        "method": "xinput_calibrator",
+        "config_file": "/etc/X11/xorg.conf.d/99-calibration.conf",
+        "template": "Section \"InputClass\"\n    Identifier \"calibration\"\n    MatchProduct \"generic ft5x06\"\n    Option \"Calibration\" \"XMIN YMIN XMAX YMAX\"\n    Option \"SwapAxes\" \"SWAP\"\nEndSection"
+      }
+    },
+    "7.0": {
+      "config_txt": [
+        "hdmi_force_hotplug=1",
+        "hdmi_group=2",
+        "hdmi_mode=87",
+        "hdmi_cvt=800 480 60 6 0 0 0"
+      ],
+      "calibration": {
+        "method": "libinput",
+        "config_file": "/etc/X11/xorg.conf.d/40-libinput.conf",
+        "template": "Section \"InputClass\"\n    Identifier \"libinput touchscreen catchall\"\n    MatchIsTouchscreen \"on\"\n    MatchDevicePath \"/dev/input/event*\"\n    Driver \"libinput\"\n    Option \"CalibrationMatrix\" \"1 0 0 0 1 0 0 0 1\"\nEndSection"
+      }
+    }
+  }
+}
